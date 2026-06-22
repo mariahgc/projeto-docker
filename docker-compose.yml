@@ -1,0 +1,43 @@
+services:
+
+  app:
+    build: ./app
+    container_name: app-node
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      ALUNO: "Maria Helena Gonçalves da Costa"
+
+    depends_on:
+      - mysql
+
+    networks:
+      - rede-so
+
+    mem_limit: 128m
+
+  mysql:
+    image: mysql:8.0
+
+    container_name: banco-mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: sistemas_operacionais
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - rede-so
+
+    mem_limit: 128m
+
+volumes:
+  mysql_data:
+
+networks:
+  rede-so:
+    driver: bridge
