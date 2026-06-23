@@ -40,6 +40,4 @@ Porque o Docker não virtualiza um sistema operacional completo. Ele compartilha
 
 ## 10. Cite três conceitos de Sistemas Operacionais presentes neste projeto.
 
-- Segurança
-- Gerenciamento de memória
-- Redes
+Segurança, gerenciamento de memória e redes.
